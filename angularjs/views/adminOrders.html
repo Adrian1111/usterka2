@@ -1,0 +1,33 @@
+<div ng-controller="eventsCtrl">
+
+    <table class="table table-striped table-bordered">
+        <tr><th>Tytuł</th><th>data</th><th>Id</th><th></th></tr>
+        <tr ng-repeat="event in events">
+            <td>{{event.title}}</td>
+            <td>{{event.date}}</td>
+            <td>{{event.id}}</td>
+            <td>
+                <button ng-click="selectEvent(event)" class="btn btn-xs btn-primary">
+                    Szczegóły
+                </button>
+            </td>
+        </tr>
+    </table>
+
+    <div ng-show="selectedEvent">
+        <h3>Szczegóły zamówienia</h3>
+
+        <table class="table table-striped table-bordered">
+            <tr><th>Nazwa</th><th>Zdjęcie</th><th>Id</th></tr>
+            <tr>
+                <td>{{selectedEvent.title}}</td>
+                <td><img class="homeIMG" ng-src="{{selectedEvent.images}}" /></td>
+                <td>{{selectedEvent.id}} </td>
+            </tr>
+        </table>
+        <table class="table table-striped table-bordered">
+            <tr><th>Opis</th></tr>
+            <tr><td>{{selectedEvent.description}}</td></tr>
+        </table>
+    </div>
+</div>

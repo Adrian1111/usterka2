@@ -1,0 +1,16 @@
+﻿body {
+    background:#eee;
+}
+div {
+    width: 100%;
+}
+.sortorder:after {
+    content: '\25b2';
+}
+.sortorder.reverse:after {
+    content: '\25bc';
+}
+.homeIMG {
+	width: 100px;
+	height: 80px;
+}

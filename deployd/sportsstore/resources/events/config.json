@@ -1,0 +1,61 @@
+{
+	"type": "Collection",
+	"properties": {
+		"title": {
+			"name": "title",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "title",
+			"order": 0
+		},
+		"description": {
+			"name": "description",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "description",
+			"order": 1
+		},
+		"date": {
+			"name": "date",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "date",
+			"order": 2
+		},
+		"category": {
+			"name": "category",
+			"type": "string",
+			"typeLabel": "string",
+			"required": true,
+			"id": "category",
+			"order": 3
+		},
+		"images": {
+			"name": "images",
+			"type": "string",
+			"typeLabel": "string",
+			"required": false,
+			"id": "images",
+			"order": 4
+		},
+		"visits": {
+			"name": "visits",
+			"type": "number",
+			"typeLabel": "number",
+			"required": false,
+			"id": "visits",
+			"order": 5
+		},
+		"rating": {
+			"name": "rating",
+			"type": "array",
+			"typeLabel": "array",
+			"required": false,
+			"id": "rating",
+			"order": 6
+		}
+	}
+}

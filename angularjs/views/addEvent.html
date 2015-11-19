@@ -1,0 +1,59 @@
+﻿<style>
+    .ng-invalid { /*background-color: lightpink;*/  border: solid 1px #ff0000;}
+    .ng-valid { /*background-color: lightgreen;*/border: solid 1px lightgreen; }
+    span.error { color: red; font-weight: bold; }
+</style>
+
+    <h2>Dodaj wydarzenie</h2>
+    <p>Wypełnij wszystkie pola formularza.</p>
+    <form name="taskForm" novalidate>
+        <div class="well">
+            <h3>Opis wydarzenia</h3>
+            <div class="form-group">
+                <label>Tytuł</label>
+                <input name="title" class="form-control"
+                       ng-model="data.addTask.title" required />
+                <span class="error" ng-show="taskForm.title.$error.required">
+                    Wprowadź tytuł.
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Opis</label>
+                <input name="desc" class="form-control"
+                       ng-model="data.addTask.description" required />
+                <span class="error" ng-show="taskForm.desc.$error.required">
+                    Proszę wprowadzić szczegółowy opis problemu.
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Data</label>
+                <input name="date" class="form-control"
+                       ng-model="data.addTask.date" required />
+                <span class="error" ng-show="taskForm.date.$error.required">
+                    Wprowadź datę w formacie rrrrmmdd.
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Obrazek</label>
+                <input name="images" class="form-control"
+                       ng-model="data.addTask.images" required />
+                <span class="error" ng-show="taskForm.date.$error.required">
+                    Wstaw url obrazka.
+                </span>
+            </div>
+            <div class="form-group">
+                <label>Kategoria</label>
+                <select ng-model="data.addTask.category" ng-options="item.name as item.name for item in data.category2" required>
+                    <option value="">Wybierz jedną kategorię z listy.</option>
+                </select>   
+            </div>
+
+            <div class="text-center">
+                <button ng-disabled="taskForm.$invalid"
+                        ng-click="sendTask(data.addTask)"
+                        class="btn btn-primary">
+                    Zapisz zgłoszenie
+                </button>
+            </div>
+        </div>
+    </form>
